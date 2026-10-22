@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Cass Adefuin's portfolio">
+	<meta name="keywords" content="HTML">
+	<meta name="author" content="Cass Adefuin">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cass Adefuin</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script>
+        class CustomElement2 extends HTMLElement {
+            connectedCallback() {
+            console.log("Hello World!");
+            }
+        }
+
+        customElements.define("custom-element-2", CustomElement2);
+    </script>
+    <style>
+        sticky-note {
+            display: flex;
+            background-color: #ffecc3;
+            width: 10em;
+            height: 10em;
+            justify-content: center;
+            align-items: center;
+            margin: 1em;
+            border-radius: 0.5em;
+            box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.5);
+            a {
+                color:black;
+                text-decoration: none;
+            }
+        }
+
+        span {
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/GameDev/">Game Dev</a></li>
+                <li><a href="/WebDev/">Web Dev</a></li>
+                <li><a href="/Graphics/">Graphics</a></li>
+                <li><a href="/experiments.html">Experiments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <dialog open id="loading-dialog">
+                <label for="loading-bar">Loading...</label>
+                <progress id="loading-bar" value="0" max="100"></progress>
+                <br>
+                <button commandfor="loading-dialog" command="close">Skip</button>
+            </dialog>
+            <p>This portfolio belongs to</p>
+            <h1><u>Cass Adefuin</u></h1>
+
+            <sticky-note>
+                <a href="/GameDev/">Game Dev</a>
+            </sticky-note>
+            <sticky-note>
+                <a href="/WebDev/">Web Dev</a>
+            </sticky-note>
+            <sticky-note>
+                <a href="/Graphics/">Graphics</a>
+            </sticky-note>
+
+            <noscript>
+                <p>Enable JavaScript to unlock <span>sticky note</span> interactions!</p>
+            </noscript>
+
+            <custom-element-2></custom-element-2>
+        </section>
+    </main>
+
+    <footer>
+        <form action="submit">
+            <fieldset>
+                <legend>Send me a message:</legend>
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+                <br>
+                <label for="message">Message:</label>
+                <textarea name="message" id="message"></textarea>
+                <br>
+                <button>Send</button>
+            </fieldset>
+        </form>
+    </footer>
+</body>
