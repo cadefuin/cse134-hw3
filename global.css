@@ -1,0 +1,170 @@
+/* --- GENERAL --- */
+
+:root {
+    /* Colors */
+    --brown-1: #582F0E;
+    --brown-2: #7F4F24;
+    --brown-3: #936639;
+    --brown-4: #A68A64;
+    --brown-5: #B6AD90;
+    
+    --green-1: #333D29;
+    --green-2: #414833;
+    --green-3: #656D4A;
+    --green-4: #A4AC86;
+    --green-5: #C2C5AA;
+
+
+    /* Fonts */
+    --font-serif: Garamond, 'Times New Roman', Times, serif;
+    --font-monospace: 'Courier New', Courier, monospace;
+}
+
+body {
+    margin: 0;
+
+    background-color: var(--brown-4);
+    color: var(--green-1);
+
+    font-family: var(--font-monospace);
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-style: italic;
+}
+
+
+/* --- HEADER --- */
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 3em;
+    margin: 0;
+    
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    background-color: var(--brown-1);
+
+    /* Vertical Navigation Menu */
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: fit-content;
+
+        background-color: var(--brown-5);
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            list-style-type: none;
+
+            margin: 0;
+            padding: 0;
+
+            li {
+                padding: 1rem;
+            
+                a {
+                    display: block;
+                    color: var(--green-1);
+                    text-decoration: none;
+                }
+            }
+
+            li:hover {background-color: var(--green-4);}
+
+            li:focus {background-color: var(--green-3);}
+        }
+    }
+
+    .menu_button {
+        display: block;
+    }
+
+    /* Show the dropdown menu on hover */
+    .menu_button:hover ~ nav {display: block;}
+
+    nav:hover {display: block;}
+
+
+    /* Horizontal Navigation Menu */
+    @media (min-width: 768px) {
+        .menu_button {display: none;}
+
+        nav {
+            display: block;
+            position: static;
+            height: 100%;
+
+            background-color: var(--brown-1);
+
+            ul {
+                flex-direction: row;
+                justify-content: end;
+
+                li {
+                    display: block;
+                    padding: auto 1rem;
+                    height: 100%;
+
+                    a {color: var(--green-5);}
+                }
+
+                li:hover {
+                    background-color: var(--brown-5);
+
+                    a {color: var(--green-1);}
+                }
+                
+                li:focus {background-color: var(--brown-3);}
+            }
+        }
+    }
+}
+
+/* Push main content down so it doesn't overlap with the fixed header */
+main {
+    margin-top: 5em;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+
+    background-color: var(--brown-1);
+    color: white;
+}
+
+
+/* --- HEADINGS --- */
+hgroup {
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+
+    border: var(--brown-1) 0.5rem solid;
+    background-color: var(--brown-5);
+
+    * {
+        display: block;
+        width: fit-content;
+        margin: 0.5em auto;
+        padding: 1em;
+        
+        background: white;
+    }
+}
